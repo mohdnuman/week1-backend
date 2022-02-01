@@ -1,5 +1,6 @@
 const Mcq=require('../models/mcq');
 const Fill=require('../models/fill');
+const Code = require('../models/code');
 
 function shuffle(array) {
     let currentIndex = array.length,  randomIndex;
@@ -28,10 +29,13 @@ module.exports.home=async function(req,res){
 
         let fills=await Fill.find({})
         .sort('-createdAt');
+
+        let codes=await Code.find({});
         
         return res.render('home',{
             mcqs:mcqs,
-            fills:fills
+            fills:fills,
+            codes:codes
         });
 
     }catch(err){

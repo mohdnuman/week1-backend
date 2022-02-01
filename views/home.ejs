@@ -29,6 +29,17 @@
             <input type="submit" value="Create Fill in the Blank">
         </form>
 
+        <h2>Create a Coding Problem</h2>
+        <form action="/code/create" id="new-code-form" method="POST">
+            <textarea name="question"  cols="30" rows="3" placeholder="question...."></textarea>
+            <textarea name="test1"  cols="30" rows="3" placeholder="test case 1...."></textarea>
+            <textarea name="answer1"  cols="30" rows="3" placeholder="answer..."></textarea>
+            <textarea name="test2"  cols="30" rows="3" placeholder="test case 2...."></textarea>
+            <textarea name="answer2"  cols="30" rows="3" placeholder="answer..."></textarea>
+
+            <input type="submit" value="Create coding Problem">
+        </form>
+
         <hr>
         <div id="mcqs-container">
             <h2>MCQ's(<%=mcqs.length%> mcqs in the system)</h2>
@@ -47,6 +58,16 @@
             <ul>
             <% for(fill of fills) {%>
                     <%-include('_fill')-%>
+
+                <%}%>
+            </ul>
+        </div>
+        <div id="code-container">
+            <h2>Coding Problems(<%=codes.length%> coding problems in the system)</h2>
+
+            <ul>
+            <% for(code of codes) {%>
+                    <%-include('_code')-%>
 
                 <%}%>
             </ul>
