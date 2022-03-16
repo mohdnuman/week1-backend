@@ -8,6 +8,11 @@ const fillSchema=new mongoose.Schema({
     answer:{
         type:String,
         required:true
+    },
+    answered:{
+        type:Boolean,
+        required:true,
+        default:false
     }
 },{
     timestamps:true
